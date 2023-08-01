@@ -1,12 +1,17 @@
-const btnFiltrarLivrosDeFront = document.getElementById('btnFiltrarLivrosFront');
-const btnFiltrarLivrosDeBack = document.getElementById('btnFiltrarLivrosBack');
-const btnFiltrarLivrosDeDados = document.getElementById('btnFiltrarLivrosDados');
+// const btnFiltrarLivrosDeFront = document.getElementById('btnFiltrarLivrosFront');
+// const btnFiltrarLivrosDeBack = document.getElementById('btnFiltrarLivrosBack');
+// const btnFiltrarLivrosDeDados = document.getElementById('btnFiltrarLivrosDados');
 
-btnFiltrarLivrosDeFront.addEventListener('click',filtrarLivrosFront);
-btnFiltrarLivrosDeBack.addEventListener('click',filtrarLivrosBack);
-btnFiltrarLivrosDeDados.addEventListener('click',filtrarLivrosDados);
+// btnFiltrarLivrosDeFront.addEventListener('click',filtrarLivrosFront);
+// btnFiltrarLivrosDeBack.addEventListener('click',filtrarLivrosBack);
+// btnFiltrarLivrosDeDados.addEventListener('click',filtrarLivrosDados);
 
-function filtrarLivros(categoria) {
+const botoes = document.querySelectorAll('.btn');
+botoes.forEach(btn => btn.addEventListener('click', filtrarLivros));
+
+function filtrarLivros() {
+    const elementoBtn = document.getElementById(this.id);
+    const categoria = elementoBtn.value;
     let livrosFiltrados = livros.filter(livro => livro.categoria == categoria);
     exibeLivrosFiltrados(livrosFiltrados);
 }
@@ -33,14 +38,14 @@ function exibeLivrosFiltrados(listaDeLivros) {
     });
 }
 
-function filtrarLivrosFront() {
-    filtrarLivros('front-end');
-}
+// function filtrarLivrosFront() {
+//     filtrarLivros('front-end');
+// }
 
-function filtrarLivrosBack() {
-    filtrarLivros('back-end');
-}
+// function filtrarLivrosBack() {
+//     filtrarLivros('back-end');
+// }
 
-function filtrarLivrosDados() {
-    filtrarLivros('dados');
-}
+// function filtrarLivrosDados() {
+//     filtrarLivros('dados');
+// }
